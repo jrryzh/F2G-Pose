@@ -19,11 +19,9 @@ extracted from the corresponding web encodes.
 | `materials.mp4` | master, 66–74 s | Transparent glass and specular rice cooker |
 | `robot_keyframes.mp4` | master, 74–80 s | Three recorded robot cases, four held keyframes each |
 
-For the v4 shape change, `selected_shapes.json` and `shape_selection.json` are
-authoritative: the third shape is a ROPE helmet. The copied v3 README and
-`asset_manifest.csv` inside the v4 output folder still name the earlier SOPE
-glass and should not be used as v4 caption sources. ROPE has no aligned
-complete-shape ground truth. The material glass example is unchanged.
+For the v4 shape change, `selected_shapes.json`, `shape_selection.json`, and
+`asset_manifest.csv` identify the third shape as a ROPE helmet. ROPE has no
+aligned complete-shape ground truth. The material glass example is unchanged.
 
 The 30 FPS of these MP4s is playback rate, not model inference speed. The
 recorded robot keyframes are held images, not continuous control footage.
