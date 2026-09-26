@@ -1,11 +1,11 @@
 # Project page media
 
-These media files were generated from the completed v6 promotional delivery at `outputs/promo/f2g_pose_v6/`. The v6 master SHA-256 is `a332ad3e2894564fb5c23318eec6cc1985ede2a474c5c6d259a833d1aaa37d31`. All MP4 files are silent H.264/yuv420p at 30 playback frames per second. Poster images were extracted from their corresponding web encodes.
+These media files were generated from the completed v6 promotional delivery at `outputs/promo/f2g_pose_v6/`. The v6 master SHA-256 is `0579d1c5e19f985d1c60899e4e2b453eb785b92784988d35ec6fd26245e0593d`. All MP4 files are silent H.264/yuv420p at 30 playback frames per second. Poster images were extracted from their corresponding web encodes.
 
 | Page file | v6 source | Frames | SHA-256 |
 | --- | --- | ---: | --- |
-| `film.mp4` | `F2G-Pose_90s_silent.mp4`, 0–90 s | 2700 | `8632c905a83bfc30705720eef8fcf0a8a32faea8a9d064a88c0485e2da70a158` |
-| `hero.mp4` | `F2G-Pose_90s_silent.mp4`, 0–6 s | 180 | `6124e682e1d57543dfe1c80c755e8d634da0787d5c683e50fa348610bd643bf2` |
+| `film.mp4` | `F2G-Pose_90s_silent.mp4`, 0–90 s | 2700 | `401035003d564e15633f8fd1a904a5468f2322c64a1f99c07d675787b270d3e0` |
+| `hero.mp4` | `F2G-Pose_90s_silent.mp4`, 0–6 s | 180 | `cdc2c73d73fee6aa9bcd4415f0995fe25e4af491bddaefe663e80a7b6f3367d1` |
 | `comparison.mp4` | `F2G-Pose_90s_silent.mp4`, 31–37 s | 180 | `1824f1e3e6facbbf41413a775d26eb72a84d2d5e373271984e17396f39fc5cbd` |
 | `rope_000354.mp4` | `F2G-Pose_90s_silent.mp4`, 13–19 s | 180 | `45106d336c5b2e1ab9b7ead1e9d41d3aca27f9dd508a0465de3f0a7febb09561` |
 | `rope_000064.mp4` | `F2G-Pose_90s_silent.mp4`, 25–31 s | 180 | `ad214a4f14535b01b4ddff1ccdd98679432131e9d4b899d8238e5db3e59ee15b` |
