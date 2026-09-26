@@ -2,27 +2,15 @@
 
 **TL;DR:** F2G-Pose estimates an object’s 6D pose, metric size, and completed 3D shape from a single segmented RGB-D observation in one forward pass.
 
-**At a glance**
+**[Project page](https://jrryzh.github.io/F2G-Pose/)** · [Paper PDF](https://jrryzh.github.io/F2G-Pose/paper.pdf) · [Pretrained weights](https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true)
 
-- 📷 **Input:** RGB image, aligned depth, camera intrinsics, and a foreground mask.
-- 🧠 **Method:** Lift visual foundation features onto observed 3D points, then combine appearance and geometry.
-- 📐 **Output:** 6D pose, metric size, and a completed point cloud in the camera frame.
+F2G-Pose lifts visual foundation features onto observed 3D points. Inputs are an RGB image, aligned depth, camera intrinsics, and a foreground mask; no category label or object-specific CAD model is needed.
 
-No category label or object-specific CAD model is needed at inference time.
-
-**Explore the project**
-
-- 🌐 [Project page](https://jrryzh.github.io/F2G-Pose/) — visual overview and videos
-- 📄 [Paper PDF](https://jrryzh.github.io/F2G-Pose/paper.pdf) — camera-ready manuscript
-- 📦 [Pretrained weights](https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true) — model checkpoint
-
-**Get started**
-
-- 🛠️ [Installation](docs/INSTALL.md) — environment and weights
-- ▶️ [Demo & inference](docs/USAGE.md#interactive-demo) — try an RGB-D input
-- 🧪 [Training](docs/USAGE.md#training) — train or resume a model
-- 📊 [Evaluation](docs/EVALUATION.md) — metrics and reproduction
-- 🚀 [Deployment](docs/DEPLOYMENT.md) — Docker and hosting
+- 🛠️ [Installation](docs/INSTALL.md)
+- ▶️ [Demo & inference](docs/USAGE.md#interactive-demo)
+- 🧪 [Training](docs/USAGE.md#training)
+- 📊 [Evaluation](docs/EVALUATION.md)
+- 🚀 [Deployment](docs/DEPLOYMENT.md)
 
 ![F2G-Pose pipeline: RGB and partial point cloud features are fused by a geometry-aware MoE Transformer, then decoded into pose, size, and completed shape.](assets/pipeline.png)
 
