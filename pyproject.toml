@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "f2g-pose"
+version = "0.1.0"
+description = "Geometry-aware foundation feature lifting for RGB-D object pose and shape"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0; third-party components retain their licenses"}
+dependencies = ["torch==2.4.0", "torchvision==0.19.0", "numpy==2.1.2", "scipy==1.15.3", "Pillow>=10", "opencv-python==4.12.0.88", "PyYAML==6.0.2", "easydict==1.13", "timm==1.0.22", "einops==0.8.1", "cutoop==0.1.0", "tqdm>=4.66"]
+
+[project.optional-dependencies]
+demo = ["gradio==5.49.1", "plotly==6.3.1"]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+f2g-pose = "f2g_pose.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/f2g-pose/licenses" = ["LICENSE", "THIRD_PARTY.md", "third_party/POINTR_LICENSE", "third_party/NOCS_LICENSE", "third_party/GDRNET_LICENSE", "third_party/CENTERNET_LICENSE", "third_party/OMNI6DPOSE_LICENSE", "third_party/RADIO_LICENSE", "third_party/pointnet2_ops/UNLICENSE"]
+"share/f2g-pose/configs" = ["configs/sope.yaml"]

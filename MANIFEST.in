@@ -1,0 +1,14 @@
+include .dockerignore .gitignore LICENSE THIRD_PARTY.md README.md requirements*.txt Dockerfile
+recursive-include configs *.yaml
+recursive-include docs *.md
+recursive-include assets *.png *.jpg *.md
+recursive-include scripts *.py
+recursive-include deploy *.py *.txt *.md
+recursive-include third_party *.py *.cpp *.cu *.h *.hpp *.txt MANIFEST.in UNLICENSE *_LICENSE
+recursive-include tests *.py
+recursive-include examples *.md *.py *.png *.npy *.txt *.json *.jsonl *.exr *.npz SHA256SUMS
+prune third_party/pointnet2_ops/build
+prune third_party/pointnet2_ops/pointnet2_ops.egg-info
+prune third_party/chamfer/build
+prune third_party/chamfer/chamfer.egg-info
+global-exclude __pycache__ *.py[cod] *.so *.o

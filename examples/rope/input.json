@@ -1,0 +1,17 @@
+{
+  "sample": {
+    "frame": "000157/000800_",
+    "object_id": "real-teapot_002",
+    "mask_id": 1,
+    "class_label": 130,
+    "class_name": "teapot"
+  },
+  "depth_scale": 1.0,
+  "depth_unit": "meters",
+  "channel_order": "RGB",
+  "mask_values": [
+    0,
+    255
+  ],
+  "alignment": "RGB, depth and instance mask from the same ROPE frame"
+}

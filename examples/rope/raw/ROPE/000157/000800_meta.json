@@ -1,0 +1,214 @@
+{
+    "objects": {
+        "1_teapot_002": {
+            "meta": {
+                "oid": "real-teapot_002",
+                "class_name": "teapot",
+                "class_label": 130,
+                "instance_path": "teapot/teapot_002/Scan/Aligned.obj",
+                "scale": [
+                    0.0009999999975673986,
+                    0.0009999999975673986,
+                    0.0009999999975673986
+                ],
+                "is_background": false,
+                "bbox_side_len": [
+                    0.08704090860174073,
+                    0.07245915204541545,
+                    0.12854731719217843
+                ]
+            },
+            "quaternion_wxyz": [
+                -0.5143134574016751,
+                0.7883536822056199,
+                0.16095302668117192,
+                -0.296773082489881
+            ],
+            "translation": [
+                -0.016518780019385643,
+                0.130616511868855,
+                0.6801011259354866
+            ],
+            "is_valid": true,
+            "id": 1,
+            "material": [],
+            "world_quaternion_wxyz": [
+                0.9999954254302535,
+                0.001748369215794673,
+                -0.001748369215794787,
+                -0.001742276882864218
+            ],
+            "world_translation": [
+                0,
+                0,
+                0
+            ]
+        },
+        "2_tooth_paste_001": {
+            "meta": {
+                "oid": "real-tooth_paste_001",
+                "class_name": "tooth_paste",
+                "class_label": 137,
+                "instance_path": "tooth_paste/tooth_paste_001/Scan/Aligned.obj",
+                "scale": [
+                    0.00099999999507337,
+                    0.00099999999507337,
+                    0.00099999999507337
+                ],
+                "is_background": false,
+                "bbox_side_len": [
+                    0.021992263685597566,
+                    0.1325057061343028,
+                    0.03419220716797342
+                ]
+            },
+            "quaternion_wxyz": [
+                -0.4600848475489712,
+                0.718000740384079,
+                0.21079499583240022,
+                -0.4778727232179846
+            ],
+            "translation": [
+                0.0888393658142462,
+                0.0019237565364260134,
+                0.7090283620691407
+            ],
+            "is_valid": true,
+            "id": 2,
+            "material": [],
+            "world_quaternion_wxyz": [
+                -1.194186050577073e-05,
+                0.9999859773144245,
+                0.005281073928179645,
+                -0.0003940686136426732
+            ],
+            "world_translation": [
+                0,
+                0,
+                0
+            ]
+        },
+        "3_watermelon_002": {
+            "meta": {
+                "oid": "real-watermelon_002",
+                "class_name": "watermelon",
+                "class_label": 152,
+                "instance_path": "watermelon/watermelon_002/Scan/Aligned.obj",
+                "scale": [
+                    0.0010000000026818066,
+                    0.0010000000026818066,
+                    0.0010000000026818066
+                ],
+                "is_background": false,
+                "bbox_side_len": [
+                    0.08721742271925183,
+                    0.08911039757784404,
+                    0.08717546104921742
+                ]
+            },
+            "quaternion_wxyz": [
+                -0.40638595726520393,
+                0.5115737211681578,
+                -0.39063257703365883,
+                0.6484974720905627
+            ],
+            "translation": [
+                0.21288694300973993,
+                0.09793256512171317,
+                0.6753184341322108
+            ],
+            "is_valid": true,
+            "id": 3,
+            "material": [],
+            "world_quaternion_wxyz": [
+                1,
+                0,
+                0,
+                0
+            ],
+            "world_translation": [
+                0,
+                0,
+                0
+            ]
+        },
+        "4_mango_003": {
+            "meta": {
+                "oid": "real-mango_003",
+                "class_name": "mango",
+                "class_label": 81,
+                "instance_path": "mango/mango_003/Scan/Aligned.obj",
+                "scale": [
+                    0.0010000000066284036,
+                    0.0010000000066284036,
+                    0.0010000000066284036
+                ],
+                "is_background": false,
+                "bbox_side_len": [
+                    0.07793722585839626,
+                    0.15684314068805713,
+                    0.09666410891709591
+                ]
+            },
+            "quaternion_wxyz": [
+                -0.5499865885163312,
+                0.4063091414986761,
+                0.7281174877364709,
+                0.047671354492050934
+            ],
+            "translation": [
+                0.2043394267154686,
+                -0.08169711865476781,
+                0.7851488574336616
+            ],
+            "is_valid": true,
+            "id": 4,
+            "material": [],
+            "world_quaternion_wxyz": [
+                0.7080791785085652,
+                -3.42639601912524e-17,
+                0.7061330448029149,
+                2.0113363097915086e-17
+            ],
+            "world_translation": [
+                0,
+                0,
+                0
+            ]
+        }
+    },
+    "camera": {
+        "quaternion": [
+            1,
+            0,
+            0,
+            0
+        ],
+        "translation": [
+            0,
+            0,
+            0
+        ],
+        "intrinsics": {
+            "fx": 912.2255859375,
+            "fy": 911.4783325195312,
+            "cx": 645.8405151367188,
+            "cy": 349.43603515625,
+            "width": 1280,
+            "height": 720
+        },
+        "scene_obj_path": "",
+        "background_image_path": "",
+        "background_depth_path": "",
+        "distances": [],
+        "kind": ""
+    },
+    "scene_dataset": "real",
+    "env_param": {},
+    "face_up": true,
+    "concentrated": false,
+    "comments": "real scan video data",
+    "runtime_seed": -1,
+    "baseline_dis": 0,
+    "emitter_dist_l": 0
+}
