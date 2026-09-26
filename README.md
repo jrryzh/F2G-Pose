@@ -8,6 +8,11 @@
   <a href="https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true">Weights</a>
 </p>
 
+<p align="center">
+  <a href="docs/media/film.mp4"><img src="docs/images/film.jpg" width="720" alt="Preview of the latest F2G-Pose 90-second film"></a><br>
+  <a href="docs/media/film.mp4">Watch the 90-second film (MP4)</a>
+</p>
+
 F2G-Pose lifts visual foundation features onto observed 3D points. Inputs are an RGB image, aligned depth, camera intrinsics, and a foreground mask; no category label or object-specific CAD model is needed.
 
 - 🛠️ [Installation](docs/INSTALL.md)
