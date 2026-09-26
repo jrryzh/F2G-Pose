@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="F2G-Pose predicts 6D pose, metric size, and camera-frame completed shape from one segmented RGB-D observation."
+    />
+    <meta name="theme-color" content="#07151c" />
+    <title>F2G-Pose | Project page</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307151c'/%3E%3Cpath d='M14 45V18h27M14 32h21M43 18v27H25' fill='none' stroke='%2356d9d0' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="F2G-Pose, back to top"
+          ><span class="brand-mark">F<span>2</span>G</span><span>Pose</span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#method">Method</a><a href="#film">Video</a
+          ><a href="#results">Results</a><a href="#paper">Paper</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot"></span> RGB-D OBJECT PERCEPTION
+          </div>
+          <h1 id="hero-title">
+            F2G-Pose<span class="title-colon">:</span
+            ><span class="title-sub"
+              >Geometry-Aware Foundation Feature Lifting for Direct RGB-D
+              Category-Level Object Pose Estimation</span
+            >
+          </h1>
+          <p class="lede">
+            From one segmented RGB-D observation, directly predict
+            <strong>6D pose</strong>, <strong>metric size</strong>, and
+            <strong>camera-frame completed shape</strong>.
+          </p>
+          <p class="authors">
+            <strong>Jinyu Zhang</strong><sup>1,2,*</sup> ·
+            <strong>Haitao Lin</strong><sup>1,*</sup> ·
+            <strong>Jiashu Hou</strong><sup>1,*</sup><br /><strong
+              >Xiangyang Xue</strong
+            ><sup>1</sup> · <strong>Yanwei Fu</strong><sup>1,2,†</sup>
+          </p>
+          <p class="affiliations">
+            <sup>1</sup> Fudan University &nbsp; <sup>2</sup> Shanghai
+            Innovation Institute<br /><span
+              >* Equal contribution &nbsp; † Corresponding author</span
+            >
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="paper.pdf"
+              >Paper PDF <span aria-hidden="true">↗</span></a
+            >
+            <a class="button" href="https://github.com/jrryzh/F2G-Pose"
+              >Code <span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="button"
+              href="https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true"
+              >Weights <span aria-hidden="true">↗</span></a
+            >
+            <a class="button" href="#film"
+              >Watch video <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-frame" id="hero-frame">
+            <img
+              src="images/hero.jpg"
+              alt="ROPE scene 000152 with F2G-Pose predictions on a bottle, box, fire extinguisher, and picnic basket"
+              width="960"
+              height="540"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="visual-caption">
+            <span class="live-dot" aria-hidden="true"></span> ROPE / SCENE
+            000152 <span>Selected frame-wise predictions</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="strip" aria-label="Core outputs">
+        <div class="wrap strip-inner">
+          <span>01 / 6D POSE</span><span>02 / METRIC SIZE</span
+          ><span>03 / COMPLETED SHAPE</span><span>ONE FORWARD PASS</span>
+        </div>
+      </div>
+
+      <section class="section wrap" id="method" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="kicker">01 — METHOD</p>
+          <h2 id="method-title">From pixels to metric geometry.</h2>
+          <p>
+            F2G-Pose uses the observed RGB-D geometry and dense visual features
+            together. Its two output branches share one learned representation.
+          </p>
+        </div>
+        <div class="method-layout">
+          <div class="steps">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Lift visual features to 3D</h3>
+                <p>
+                  A frozen RADIO backbone extracts dense image features. Aligned
+                  depth and the object mask associate those features with
+                  observed 3D points.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Fuse local and global structure</h3>
+                <p>
+                  DGCNN builds local geometric tokens; a Mixture-of-Experts
+                  Transformer brings in object-level context.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Predict together</h3>
+                <p>
+                  Parallel heads produce the 6D pose and metric size, plus a
+                  completed point cloud in the camera frame.
+                </p>
+              </div>
+            </article>
+          </div>
+          <figure class="method-figure">
+            <a
+              href="images/method.png"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open the method figure at full size in a new tab"
+              ><img
+                src="images/method.png"
+                alt="Figure 1: RGB-D input is lifted into visual and geometric point features, fused by a MoE Transformer, and decoded into pose, size, and completed shape"
+                width="1464"
+                height="760"
+                loading="lazy"
+            /></a>
+            <figcaption>
+              Paper Figure 1 · Tap or click to view at full size.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="section section-tint"
+        id="film"
+        aria-labelledby="film-title"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="kicker">02 — FILM</p>
+            <h2 id="film-title">See the full story in 90 seconds.</h2>
+            <p>
+              Real and synthetic scenes, pose comparisons, predicted shapes, and
+              recorded robot cases. The film is silent and has English text on
+              screen.
+            </p>
+          </div>
+          <figure class="feature-video">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/film.jpg"
+              aria-label="Play the complete 90-second F2G-Pose film"
+            >
+              <source src="media/film.mp4" type="video/mp4" />
+              Your browser does not support MP4 video.
+              <a href="media/film.mp4">Download the film</a>.
+            </video>
+            <figcaption>
+              <span>FULL FILM</span
+              ><span>01:30 · Selected qualitative examples</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="section wrap"
+        id="examples"
+        aria-labelledby="examples-title"
+      >
+        <div class="section-heading">
+          <p class="kicker">03 — SELECTED EXAMPLES</p>
+          <h2 id="examples-title">Look closer.</h2>
+          <p>
+            Each clip plays only when requested. The overlays are predictions on
+            segmented RGB-D inputs; the selected examples do not represent
+            aggregate benchmark accuracy.
+          </p>
+        </div>
+        <div class="gallery two-col">
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/comparison.jpg"
+              aria-label="Play ground truth versus F2G-Pose comparison"
+            >
+              <source src="media/comparison.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">ROPE / COMPARISON</p>
+              <h3>Ground truth and prediction</h3>
+              <p>
+                Two pose overlays on the same frames from ROPE scene 000300.
+              </p>
+            </div>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/rope_000354.jpg"
+              aria-label="Play ROPE scene 000354"
+            >
+              <source src="media/rope_000354.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">ROPE / SCENE 000354</p>
+              <h3>Changing viewpoints</h3>
+              <p>
+                Frame-wise predictions for a donut, helmet, pineapple, rice
+                cooker, and teapot.
+              </p>
+            </div>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/rope_000064.jpg"
+              aria-label="Play ROPE scene 000064"
+            >
+              <source src="media/rope_000064.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">ROPE / SCENE 000064</p>
+              <h3>Shapes and scales</h3>
+              <p>
+                Six everyday categories in another continuous ROPE interval.
+              </p>
+            </div>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/materials.jpg"
+              aria-label="Play selected transparent and reflective examples"
+            >
+              <source src="media/materials.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">ROPE / MATERIALS</p>
+              <h3>Glass and reflective metal</h3>
+              <p>
+                Selected transparent red wine glass and specular rice cooker
+                cases.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="subsection-heading">
+          <p class="kicker">CAMERA-FRAME COMPLETION</p>
+          <h3>Three predicted shapes. One RGB-D view each.</h3>
+          <p>
+            The rotating clouds contain 2,048 predicted points. The helmet is a
+            real ROPE example with no aligned complete-shape ground truth.
+          </p>
+        </div>
+        <div class="gallery three-col">
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/shape_hammer.jpg"
+              aria-label="Play predicted SOPE hammer shape rotation"
+            >
+              <source src="media/shape_hammer.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">SOPE / HAMMER</p>
+              <h3>Hammer</h3>
+            </div>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/shape_shoe.jpg"
+              aria-label="Play predicted SOPE shoe shape rotation"
+            >
+              <source src="media/shape_shoe.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">SOPE / SHOE</p>
+              <h3>Shoe</h3>
+            </div>
+          </article>
+          <article class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/shape_helmet.jpg"
+              aria-label="Play predicted ROPE helmet shape rotation"
+            >
+              <source src="media/shape_helmet.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">ROPE / HELMET</p>
+              <h3>Helmet</h3>
+            </div>
+          </article>
+        </div>
+        <div class="robot-block">
+          <div>
+            <p class="kicker">RECORDED ROBOT SCENES</p>
+            <h3>Pose estimates in the workspace.</h3>
+            <p>
+              Mug and cup, hammer, and transparent bottle cases. Each scene
+              shows four representative keyframes from an existing recording,
+              held for 1.5 seconds each. These are not continuous online-control
+              footage.
+            </p>
+          </div>
+          <figure class="video-card">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="images/robot_keyframes.jpg"
+              aria-label="Play recorded representative robot keyframes"
+            >
+              <source src="media/robot_keyframes.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="card-body">
+              <span class="tag">ARX ROBOT / THREE RECORDED CASES</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        class="section section-tint"
+        id="results"
+        aria-labelledby="results-title"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="kicker">04 — PAPER RESULTS</p>
+            <h2 id="results-title">Reported in the camera-ready paper.</h2>
+            <p>
+              These numbers follow the paper’s evaluation protocol. Independent
+              results for the released weights are reported in the
+              <a href="https://github.com/jrryzh/F2G-Pose#evaluation"
+                >code repository README</a
+              >.
+            </p>
+          </div>
+          <div class="result-grid">
+            <div class="result-card">
+              <span class="result-label">ROPE · IoU50 AUC</span
+              ><strong>27.8</strong
+              ><span
+                >F2G-Pose <span class="muted">vs. 19.1 GenPose++</span></span
+              >
+            </div>
+            <div class="result-card">
+              <span class="result-label">SOPE · IoU50 AUC</span
+              ><strong>43.7</strong
+              ><span
+                >F2G-Pose <span class="muted">vs. 31.9 GenPose++</span></span
+              >
+            </div>
+            <div class="result-card">
+              <span class="result-label">MODEL THROUGHPUT</span
+              ><strong>28 <small>FPS</small></strong
+              ><span
+                >Pose-only
+                <span class="muted">· 23.7 FPS full model</span></span
+              >
+            </div>
+            <div class="result-card">
+              <span class="result-label">SOPE · SHAPE CD-L1</span
+              ><strong>5.42</strong><span>Paper metric, ×1000</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">ROBOT · FULL MODEL</span
+              ><strong>68<span class="slash">/</span>80</strong
+              ><span>Successful placements in the paper trials</span>
+            </div>
+          </div>
+          <p class="result-note">
+            AUC values are percentage points. Throughput is model inference on
+            the paper’s hardware and protocol; the film’s 30 FPS playback is
+            separate.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section wrap paper-section"
+        id="paper"
+        aria-labelledby="paper-title"
+      >
+        <div>
+          <p class="kicker">05 — READ & BUILD</p>
+          <h2 id="paper-title">Explore the paper and code.</h2>
+          <p>
+            Find the complete method, evaluation details, installation
+            instructions, and pretrained checkpoint.
+          </p>
+        </div>
+        <div class="paper-links">
+          <a href="paper.pdf"
+            >Read camera-ready PDF <span aria-hidden="true">↗</span></a
+          ><a href="https://github.com/jrryzh/F2G-Pose"
+            >Browse source code <span aria-hidden="true">↗</span></a
+          ><a
+            href="https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true"
+            >Download weights <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footer-inner">
+        <div>
+          <strong>F2G-Pose</strong>
+          <p>Geometry-aware category-level object pose estimation.</p>
+        </div>
+        <div>
+          <p>
+            Paper Figure 1 and reported metrics: F2G-Pose camera-ready paper.
+            Video: selected v4 examples from Omni6DPose SOPE/ROPE and
+            author-recorded ARX robot RGB-D scenes. Examples are illustrative.
+            Inference requires a segmented RGB-D input with aligned depth,
+            object mask, and camera intrinsics.
+          </p>
+          <p>
+            © 2026 F2G-Pose authors ·
+            <a href="https://jrryzh.github.io/">Author homepage</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

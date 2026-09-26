@@ -2,6 +2,8 @@
 
 **TL;DR:** F2G-Pose estimates an object’s 6D pose, metric size, and completed 3D shape from a single segmented RGB-D observation in one forward pass.
 
+**[Project page](https://jrryzh.github.io/F2G-Pose/)** · [Paper PDF](https://jrryzh.github.io/F2G-Pose/paper.pdf) · [Pretrained weights](https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true)
+
 F2G-Pose lifts visual foundation features onto observed 3D points. Inputs are an RGB image, aligned depth, camera intrinsics, and a foreground mask; no category label or object-specific CAD model is needed.
 
 [Installation](docs/INSTALL.md) · [Demo & inference](docs/USAGE.md#interactive-demo) · [Training](docs/USAGE.md#training) · [Evaluation](docs/EVALUATION.md) · [Deployment](docs/DEPLOYMENT.md)
