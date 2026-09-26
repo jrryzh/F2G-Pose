@@ -175,7 +175,7 @@
             <p class="kicker">02 — FILM</p>
             <h2 id="film-title">See the full story in 90 seconds.</h2>
             <p>
-              Real and synthetic scenes, pose comparisons, a qualitative shape prediction, and
+              Real and synthetic scenes, pose comparisons, three selected shape predictions, and
               recorded robot cases. The film is silent and has English text on
               screen.
             </p>
@@ -287,6 +287,51 @@
                 Selected transparent red wine glass and specular dish
                 cases.
               </p>
+            </div>
+          </article>
+        </div>
+        <div class="subsection-heading">
+          <h3>Direct shape predictions</h3>
+          <p>
+            Three user-selected SOPE examples from a 3,000-video review. Each
+            shows the saved 2,048-point network prediction from one RGB-D
+            observation. These are qualitative examples; the eraser passes all
+            original geometric screening thresholds, while the chess piece and
+            flute do not.
+          </p>
+        </div>
+        <div class="gallery three-col">
+          <article class="video-card">
+            <video controls playsinline preload="none" poster="images/shape_1.jpg"
+              aria-label="Play eraser shape prediction">
+              <source src="media/shape_1.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">SOPE / ERASER</p>
+              <h3>Eraser</h3>
+              <p>Direct prediction from one RGB-D input. Rank 2 in the manual review.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <video controls playsinline preload="none" poster="images/shape_2.jpg"
+              aria-label="Play Chinese chess piece shape prediction">
+              <source src="media/shape_2.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">SOPE / CHINESE CHESS</p>
+              <h3>Chinese chess piece</h3>
+              <p>Direct prediction from one RGB-D input. Rank 32 and the film’s pipeline example.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <video controls playsinline preload="none" poster="images/shape_3.jpg"
+              aria-label="Play flute shape prediction">
+              <source src="media/shape_3.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <p class="tag">SOPE / FLUTE</p>
+              <h3>Flute</h3>
+              <p>Direct prediction from one RGB-D input. Rank 43 in the manual review.</p>
             </div>
           </article>
         </div>
