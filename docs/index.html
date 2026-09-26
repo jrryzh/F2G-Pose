@@ -211,7 +211,8 @@
           <p>
             Each clip plays only when requested. The overlays are predictions on
             segmented RGB-D inputs; the selected examples do not represent
-            aggregate benchmark accuracy.
+            aggregate benchmark accuracy. ROPE prediction boxes use display-only
+            temporal smoothing; the original model predictions are retained.
           </p>
         </div>
         <div class="gallery two-col">
@@ -455,7 +456,7 @@
         <div>
           <p>
             Paper Figure 1 and reported metrics: F2G-Pose camera-ready paper.
-            Video: selected v5 examples from Omni6DPose SOPE/ROPE and
+            Video: selected v6 examples from Omni6DPose SOPE/ROPE and
             author-recorded ARX robot RGB-D scenes. Examples are illustrative.
             Inference requires a segmented RGB-D input with aligned depth,
             object mask, and camera intrinsics.
