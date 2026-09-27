@@ -88,10 +88,6 @@
               fetchpriority="high"
             />
           </div>
-          <div class="visual-caption">
-            <span class="live-dot" aria-hidden="true"></span> ROPE / SCENE
-            000152 <span>Selected frame-wise predictions</span>
-          </div>
         </div>
       </section>
 
@@ -176,8 +172,7 @@
             <h2 id="film-title">See the full story in 90 seconds.</h2>
             <p>
               Real and synthetic scenes, pose comparisons, three selected shape predictions, and
-              recorded robot cases. The film is silent and has English text on
-              screen.
+              recorded robot cases.
             </p>
           </div>
           <figure class="feature-video">
@@ -208,12 +203,6 @@
         <div class="section-heading">
           <p class="kicker">03 — SELECTED EXAMPLES</p>
           <h2 id="examples-title">Look closer.</h2>
-          <p>
-            Each clip plays only when requested. The overlays are predictions on
-            segmented RGB-D inputs; the selected examples do not represent
-            aggregate benchmark accuracy. ROPE prediction boxes use display-only
-            causal temporal smoothing from current and earlier poses; the original model predictions are retained.
-          </p>
         </div>
         <div class="gallery two-col">
           <article class="video-card">
@@ -293,13 +282,6 @@
         </div>
         <div class="subsection-heading">
           <h3>Direct shape predictions</h3>
-          <p>
-            Three user-selected SOPE examples from a 3,000-video review. Each
-            shows the saved 2,048-point network prediction from one RGB-D
-            observation. These are qualitative examples; the eraser passes all
-            original geometric screening thresholds, while the chess piece and
-            flute do not.
-          </p>
         </div>
         <div class="gallery three-col">
           <article class="video-card">
@@ -310,7 +292,6 @@
             <div class="card-body">
               <p class="tag">SOPE / ERASER</p>
               <h3>Eraser</h3>
-              <p>Direct prediction from one RGB-D input. Rank 2 in the manual review.</p>
             </div>
           </article>
           <article class="video-card">
@@ -321,7 +302,6 @@
             <div class="card-body">
               <p class="tag">SOPE / CHINESE CHESS</p>
               <h3>Chinese chess piece</h3>
-              <p>Direct prediction from one RGB-D input. Rank 32 and the film’s pipeline example.</p>
             </div>
           </article>
           <article class="video-card">
@@ -332,7 +312,6 @@
             <div class="card-body">
               <p class="tag">SOPE / FLUTE</p>
               <h3>Flute</h3>
-              <p>Direct prediction from one RGB-D input. Rank 43 in the manual review.</p>
             </div>
           </article>
         </div>
@@ -341,10 +320,7 @@
             <p class="kicker">RECORDED ROBOT SCENES</p>
             <h3>Pose estimates in the workspace.</h3>
             <p>
-              Mug and cup, hammer, and transparent bottle cases. Each scene
-              shows four representative keyframes from an existing recording,
-              held for 1.5 seconds each. These are not continuous online-control
-              footage.
+              Mug and cup, hammer, and transparent bottle cases.
             </p>
           </div>
           <figure class="video-card">
@@ -371,15 +347,7 @@
       >
         <div class="wrap">
           <div class="section-heading">
-            <p class="kicker">04 — PAPER RESULTS</p>
-            <h2 id="results-title">Reported in the camera-ready paper.</h2>
-            <p>
-              These numbers follow the paper’s evaluation protocol. Independent
-              results for the released weights are reported in the
-              <a href="https://github.com/jrryzh/F2G-Pose#evaluation"
-                >code repository README</a
-              >.
-            </p>
+            <h2 id="results-title">Paper results at a glance.</h2>
           </div>
           <div class="result-grid">
             <div class="result-card">
@@ -454,13 +422,6 @@
           <p>Geometry-aware category-level object pose estimation.</p>
         </div>
         <div>
-          <p>
-            Paper Figure 1 and reported metrics: F2G-Pose camera-ready paper.
-            Video: selected v6 examples from Omni6DPose SOPE/ROPE and
-            author-recorded ARX robot RGB-D scenes. Examples are illustrative.
-            Inference requires a segmented RGB-D input with aligned depth,
-            object mask, and camera intrinsics.
-          </p>
           <p>
             © 2026 F2G-Pose authors ·
             <a href="https://jrryzh.github.io/">Author homepage</a>
