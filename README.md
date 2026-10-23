@@ -4,7 +4,8 @@
 
 <p align="center">
   <strong><a href="https://jrryzh.github.io/F2G-Pose/">Project page</a></strong> ·
-  <a href="https://jrryzh.github.io/F2G-Pose/paper.pdf">Paper PDF</a> ·
+  <a href="https://arxiv.org/abs/2610.31623">arXiv</a> ·
+  <a href="https://arxiv.org/pdf/2610.31623">Paper PDF</a> ·
   <a href="https://huggingface.co/J3rr1/F2G-Pose/resolve/main/f2g-pose.pt?download=true">Weights</a>
 </p>
 
@@ -105,6 +106,23 @@ On RTX 4090, batch-1 model inference runs at **36.6 FPS** with shape completion 
 | Run with Docker or prepare a Hugging Face Space | [Deployment](docs/DEPLOYMENT.md) |
 | Check model inputs, outputs, and limitations | [Model card](docs/MODEL_CARD.md) |
 | Inspect implementation checks | [Validation](docs/VALIDATION.md) |
+
+## Citation
+
+If you use F2G-Pose in your research, please cite:
+
+```bibtex
+@article{zhang2026f2gpose,
+  title={F2G-Pose: Geometry-Aware Foundation Feature Lifting for Direct RGB-D Category-Level Object Pose Estimation},
+  author={Zhang, Jinyu and Lin, Haitao and Hou, Jiashu and Xue, Xiangyang and Fu, Yanwei},
+  journal={arXiv preprint arXiv:2610.31623},
+  year={2026},
+  eprint={2610.31623},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.31623}
+}
+```
 
 ## Acknowledgments and license
 
